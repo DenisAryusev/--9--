@@ -1,1 +1,9 @@
-
+private void Form1_Load(object sender, EventArgs e)
+{
+   textBox1.Clear();
+   openFileDialog1.FileName = @"data\Text2.txt";
+   openFileDialog1.Filter =
+            "Текстовые файлы (*.txt)|*.txt|All files (*.*)|*.*";
+   saveFileDialog1.Filter =
+            "Текстовые файлы (*.txt)|*.txt|All files (*.*)|*.*";
+}
