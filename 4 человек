@@ -1,0 +1,20 @@
+private void сохранитьКакToolStripMenuItem_Click(object sender,EventArgs e)
+{
+   saveFileDialog1.FileName = openFileDialog1.FileName;
+   if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+   {
+      try
+      {
+         var Писатель = new System.IO.StreamWriter(
+         saveFileDialog1.FileName, false,              
+                             System.Text.Encoding.GetEncoding(1251));
+         Писатель.Write(textBox1.Text);
+         Писатель.Close(); 
+     }
+     catch (Exception Ситуация)
+     { // отчет о других ошибках
+          MessageBox.Show(Ситуация.Message,
+              "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+     }
+  }
+}
