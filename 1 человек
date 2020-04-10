@@ -1,1 +1,24 @@
+publicintoper;
+publicstringvalue;
+
+publicvoid sum(stringstr)
+        {
+return;
+        }
+publicvoid subtraction(stringstr)
+        {
+return;
+        }
+publicvoid multiplication(stringstr)
+        {
+return;
+        }
+publicvoid division(stringstr)
+{
+return;
+ }
+publicstring equal(stringstr)
+{
+return"";
+ }
 
