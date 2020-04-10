@@ -1,1 +1,23 @@
-
+private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+{
+   openFileDialog1.ShowDialog();
+   if (openFileDialog1.FileName == String.Empty) return;
+   // Чтение текстового файла
+   try
+   {
+      var Читатель = new System.IO.StreamReader(
+      openFileDialog1.FileName, Encoding.GetEncoding(1251));
+      textBox1.Text = Читатель.ReadToEnd();
+      Читатель.Close();
+   }
+   catch (System.IO.FileNotFoundException Ситуация)
+   {
+      MessageBox.Show(Ситуация.Message + "\nНет такого файла",
+               "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+   }
+   catch (Exception Ситуация)
+   { // отчет о других ошибках
+      MessageBox.Show(Ситуация.Message,
+           "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+   }
+}
